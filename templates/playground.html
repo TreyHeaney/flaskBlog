@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block content %}
+<style>
+ul {
+  list-style-type: none;
+  display: table;
+  margin: 0;
+  padding: 0;
+  font-size: 20px
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  padding: 20px;
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+	<center>
+		<ul>
+			<li><a href="http://127.0.0.1:5000/home">Home</a></li>
+			<li><a href="http://127.0.0.1:5000/projects">Projects</a></li>
+			<li><a href="http://127.0.0.1:5000/about">About</a></li>
+			<li><a href="http://127.0.0.1:5000/directory">Directory</a></li>
+		</ul>
+	</center>
+</body>
+{% endblock content %}
