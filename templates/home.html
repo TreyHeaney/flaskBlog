@@ -1,9 +1,0 @@
-{% extends 'layout.html' %}
-{% block content %}
-	<h1>Posts</h1>
-	{% for post in posts %}
-	<h1>{{ post.title }}</h1>
-	<p>Posted on {{ post.posted }}</p>
-	<p>{{ post.content }}</p>
-	{% endfor %}
-{% endblock content %}

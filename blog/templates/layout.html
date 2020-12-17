@@ -35,24 +35,26 @@
   		color: #12152e;
 	}
 </style>
-<body>
-	<center>
-		<ul>
-			<li><a href="http://127.0.0.1:5000/home">Home</a></li>
-			<li><a href="http://127.0.0.1:5000/blog">Blog</a></li>
-			<li><a href="http://127.0.0.1:5000/about">About</a></li>
-			<li><a href="http://127.0.0.1:5000/directory">Directory</a></li>
-		</ul>
-	</center>
-</body>
-<body>
-	<div class="container", style="font-family:courier;color:#12152e">
-		{% block content %}
-		{% endblock %}
+<main>
+	<div>
+		<center>
+			<ul>
+				<li><a href="{{ url_for('home') }}">Home</a></li>
+				<li><a href="{{ url_for('blog') }}">Blog</a></li>
+				<li><a href="{{ url_for('about') }}">About</a></li>
+				<li><a href="{{ url_for('home') }}">Directory</a></li>
+			</ul>
+		</center>
 	</div>
-	<!-- Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <!-- /Bootstrap -->
-    <!-- read more at https://getbootstrap.com/ -->
-</body>
+	<div>
+		<div class="container", style="font-family:courier;color:#12152e">
+			{% block content %}
+			{% endblock %}
+		</div>
+		<!-- Bootstrap -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<!-- /Bootstrap -->
+	</div>
+</main>
 </html>
+

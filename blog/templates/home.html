@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h1>Projects</h1>
+	{% for post in posts %}
+	<h1 style="font-size:200%;">{{ post.title }}</h1>
+	<p>{{ post.summary }}</p>
+	<p style="font-size:90%;">Posted on {{ post.posted }}</p>
+	<!-- {{ post.content }}</p> -->
+	{% endfor %}
+{% endblock content %}
