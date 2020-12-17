@@ -1,10 +1,18 @@
+from os import getenv
+from dotenv import load_dotenv
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
+
+# Loads environment variables for secret things...
+load_dotenv()
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'b7f21a51321de54dce0c6b3fda7277bdf59dac281204a00b9e40a3a11ea7f858'
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///env/site.db"
+app.config['SECRET_KEY'] = getenv('SECRET_KEY')		
+app.config['SQLALCHEMY_DATABASE_URI'] = getenv('SQLALCHEMY_DATABASE_URI')
 
 db = SQLAlchemy(app) 
+crpt = Bcrypt(app)
 
 from blog import routes
+
