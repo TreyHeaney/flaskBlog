@@ -4,7 +4,6 @@ from blog import db
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired
-#####################################################################
 
 
 # An empty post row for our SQL database. 
@@ -14,6 +13,7 @@ class Post(db.Model):
 	date_posted = db.Column(db.DateTime(), nullable=False, 
 							default=datetime.utcnow)
 	content = db.Column(db.Text, nullable=False)
+	project= db.Column(db.Boolean, nullable=False)
 	link = db.Column(db.Text, nullable=False)
 	
 	def __rep__(self):

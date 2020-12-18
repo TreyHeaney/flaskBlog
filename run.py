@@ -1,6 +1,6 @@
 #####################################################################
 ## APP STRUCTURE
-## 1. run.py > 2. __init__.py > 3. routes.py
+## run.py > __init__.py > routes.py
 ## 1. run.py is ran directly or through flask run
 ## 2. run.py imports blog and blog runs __init__.py
 ## 3. __init__.py runs routes.py

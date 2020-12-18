@@ -3,33 +3,15 @@
 from flask import render_template, url_for, redirect
 from os import getenv
 from blog.models import Post, Login
-from blog import app, crpt
+from blog import app, crpt, db
 
 
-# TODO: REPLACE THIS WITH THE SQL DATABASE
-posts = [
-    {
-        'title': 'Blog Post 1',
-        'content': 'First post content',
-        'date_posted': 'April 20, 2018',
-        'project': False,
-    },
-    {
-        'title': 'Project 1',
-        'content': 'Second post content',
-        'date_posted': 'April 21, 2018',
-        'project': True,
-    },
-    {
-        'title': 'Project 2',
-        'content': 'Second post content',
-        'date_posted': 'April 21, 2018',
-        'project': True,
-    },
-]
+posts = Post.query.all()
 
-projects = [post for post in posts if post['project']]
-blogs = [post for post in posts if not post['project']]
+
+
+projects = [post for post in posts if post.project]
+blogs = [post for post in posts if not post.project]
 
 
 def build_site():
