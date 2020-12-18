@@ -1,3 +1,5 @@
+# FLASK SQL ALCHEMY NOTES, IGNORE.
+
 from blog import db
 from blog.models import Post
 
