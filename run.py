@@ -27,8 +27,14 @@
 ##
 ## **Wow this makes dealing with paths so much easier I love python.
 ###############################################################################
+
+# TODO:
+# > Post writer.
+# > Post manager.
+# > Post hyperlinks from root pages.
+# > AWS
+
 from blog import app
 
 if __name__ == '__main__':
 	app.run(debug=True)
-

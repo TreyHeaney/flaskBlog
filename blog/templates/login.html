@@ -7,7 +7,7 @@
 				<legend>Admin Login</legend>
 				<div class="form_group">
 					<!--.py comment--->
-					<!--WTForms turns this bizzare chunk of text into an input field--->
+					<!--WTForms turns this bizarre chunk of text into an input field--->
 					<!--"form" variable passed in when creating the route in routes.py--->
 					{{ form.username.label(class="form-control-label") }}
 					{{ form.username(class="form-control") }}
@@ -17,8 +17,13 @@
 					{{ form.password(class="form-control") }}
 				</div>
 			</fieldset>
+			<div class="form-check">
+				{{ form.remember(class="form-check-input") }}
+				{{ form.remember.label(class="form-check-label") }}
+			</div>
 			<div class="form_group">
 				{{ form.submit(class="btn") }}
+			</div>
 		</form>
 	</div>
 {% endblock content %}

@@ -15,4 +15,3 @@ posts = Post.query.all()
 
 for post in posts:
 	print(post.date_posted)
-
