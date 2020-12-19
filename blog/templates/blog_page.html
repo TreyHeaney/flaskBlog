@@ -3,7 +3,7 @@
 	<h1 class="header">Blog Posts</h1>
 	{% for post in posts %}
 		<article>
-			<h1 class="subheader">>{{ post.title }}</h1>
+			<h1 class="subheader">> {{ post.title }}</h1>
 			<p>{{ post.summary }}</p>
 			<p class="content">Posted on {{ post.date_posted.date() }}</p>
 		</article>

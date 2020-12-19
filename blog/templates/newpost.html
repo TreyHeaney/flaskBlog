@@ -1,0 +1,27 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend>New Post</legend>
+            <div>
+                {{ form.title.label(class="form-control-label") }}
+                {{ form.title(class="form-control form-control-lg") }}
+            </div>
+            <div>
+                {{ form.body.label() }}
+                {{ form.body(class="form-control form-control-lg") }}
+            </div>
+        </fieldset>
+        <div>
+            {{ form.project.label }}
+            {{ form.project() }}
+        </div>
+        <div>
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock content %}

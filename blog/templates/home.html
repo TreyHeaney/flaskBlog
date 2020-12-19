@@ -4,9 +4,7 @@
 	{% for post in posts %}
 		<article>
 			<h1 class="subheader">> {{ post.title }}</h1>
-			<p>{{ post.summary }}</p>
-			<p class="content">Posted on {{ post.date_posted.date() }}</p>
+			<p class="text-secondary" style="position:relative;left:5%;bottom:18px;">Posted on {{ post.date_posted.date() }}</p>
 		</article>
-	<!-- {{ post.content }}</p> -->
 	{% endfor %}
 {% endblock content %}

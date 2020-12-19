@@ -16,4 +16,6 @@ logins = LoginManager(app)
 db = SQLAlchemy(app) 
 crpt = Bcrypt(app)
 
+logins.login_view = 'admin'
+
 from blog import routes

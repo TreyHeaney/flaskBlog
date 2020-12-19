@@ -32,6 +32,7 @@
 # > Post writer.
 # > Post manager.
 # > Post hyperlinks from root pages.
+# > External image hosting for project banners.
 # > AWS
 
 from blog import app

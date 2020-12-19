@@ -4,7 +4,8 @@ from random import randint, choice
 from blog import db, logins
 from flask_login import UserMixin
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, \
+    TextAreaField
 from wtforms.validators import DataRequired
 
 
@@ -21,10 +22,10 @@ class Post(db.Model):
                             default=datetime.utcnow)
     content = db.Column(db.Text, nullable=False)
     project = db.Column(db.Boolean, nullable=False)
-    link = db.Column(db.Text, nullable=False)
+    # link = db.Column(db.Text, nullable=False)
 
-    def __rep__(self):
-        return f"Post('{self.title}', '{self.date_posted}')"
+    def __repr__(self):
+        return f"POST:: ID: {self.id}, TITLE: {self.title}, DATE: {self.date_posted}, CONTENT: {self.content}, PROJECT: {self.project}"
 
 
 # An empty row for our SQL user database
@@ -49,6 +50,13 @@ class Login(FlaskForm):
     submit = SubmitField('Login')
 
 
+class PostForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired()])
+    body = TextAreaField('Content', validators=[DataRequired()])
+    project = BooleanField('Project')
+    submit = SubmitField('Post')
+
+
 # Splash text
 prefix = ['Poor ', 'Common ', 'Uncommon ', 'Rare ', 'Epic ', 'Legendary ']
 midfix = ['Helm ', 'Sword ', 'Blade ', 'Spaulders ', 'Pants ', 'Vest ',
@@ -65,8 +73,8 @@ splashes = ['Not a work in progress!', 'Not FDA approved!',
             '　Cloud computing!', '　PEP8 compliant!', 'Do not redistribute!',
             '　　idspispopd!', '<a style="color:yellow;">',
             'Written with Pycharm!', 'Written with Flask!',
-            'Written with vim!', 'Written with gedit!',
-            '　　　P is NP!', 'Funding secured!',
+            'Written with vim!', 'Written with gedit!', '　　　P is NP!',
+            'Funding secured!',
             choice(prefix) + choice(midfix) + choice(suffix),
             choice(prefix) + choice(midfix) + choice(suffix),
             choice(prefix) + choice(midfix) + choice(suffix),
