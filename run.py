@@ -6,7 +6,7 @@
 ## 3. __init__.py runs routes.py
 ## 
 ## APP TREE
-##
+## # I won't be updating this constantly.
 ## flaskblog
 ## ├── blog			# Package wrapper for project. **
 ## │   ├── __init__.py		# Initializes environment and backend.
