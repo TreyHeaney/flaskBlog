@@ -1,4 +1,7 @@
+# Standard library.
 from os import getenv
+
+# Third party.
 from dotenv import load_dotenv
 from flask import Flask
 from flask_login import LoginManager
@@ -9,12 +12,13 @@ from flask_bcrypt import Bcrypt
 load_dotenv()
 
 app = Flask(__name__)
+
 app.config['SECRET_KEY'] = getenv('SECRET_KEY')		
 app.config['SQLALCHEMY_DATABASE_URI'] = getenv('SQLALCHEMY_DATABASE_URI')
 
 logins = LoginManager(app)
-db = SQLAlchemy(app) 
 crpt = Bcrypt(app)
+db = SQLAlchemy(app)
 
 logins.login_view = 'admin'
 

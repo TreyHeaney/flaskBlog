@@ -1,12 +1,18 @@
-# Here's pretty much all the backend for my admin login/post mgmt.
+"""Table formats for the database and website post forms"""
+
+# Standard library.
 from datetime import datetime
 from random import randint, choice
-from blog import db, logins
+
+# Third party.
 from flask_login import UserMixin
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, \
     TextAreaField
 from wtforms.validators import DataRequired
+
+# Local.
+from blog import db, logins
 
 
 @logins.user_loader
@@ -58,24 +64,13 @@ class PostForm(FlaskForm):
 
 
 # Splash text
-prefix = ['Poor ', 'Common ', 'Uncommon ', 'Rare ', 'Epic ', 'Legendary ']
-midfix = ['Helm ', 'Sword ', 'Blade ', 'Spaulders ', 'Pants ', 'Vest ',
-          'Boots ']
-suffix = ['of the Aurora ', 'of the Wolf ', 'of the Squire', 'of the Thief',
-          'of the Mind', 'of Striking', 'of the Wildfire ']
-
 splashes = ['Not a work in progress!', 'Not FDA approved!',
             'Everything is logged!', "He's reading the splash text!",
-            '　Manual breathing!', '　The cake is a lie!', 'Is this thing on?!',
+            '　The cake is a lie!', 'Is this thing on?!',
             '　Welcome to my blog!', '　Your text here!', "　　<class 'str'>",
             f"Here's a random number: {randint(0, 10)}!", 'Hosted on AWS!',
             'SECRET PAGE: /admin!', 'Open source, closed enviornment!',
             '　Cloud computing!', '　PEP8 compliant!', 'Do not redistribute!',
             '　　idspispopd!', '<a style="color:yellow;">',
-            'Written with Pycharm!', 'Written with Flask!',
-            'Written with vim!', 'Written with gedit!', '　　　P is NP!',
-            'Funding secured!',
-            choice(prefix) + choice(midfix) + choice(suffix),
-            choice(prefix) + choice(midfix) + choice(suffix),
-            choice(prefix) + choice(midfix) + choice(suffix),
-            choice(prefix) + choice(midfix) + choice(suffix),]
+            'Written with Pycharm!', 'Made with Flask!',
+            'Written with vim!', 'Written with gedit!', '　　　P is NP!']
