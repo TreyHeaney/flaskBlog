@@ -6,7 +6,7 @@
 ## 3. __init__.py runs routes.py
 ## 
 ## APP TREE
-## # I won't be updating this constantly.
+##
 ## flaskblog
 ## ├── blog			# Package wrapper for project. **
 ## │   ├── __init__.py		# Initializes environment and backend.
@@ -19,12 +19,12 @@
 ## │       ├── layout.html			# Layout that every page extends.
 ## │       ├── login.html			# Admin login portal for...
 ## │       ├── newpost.html			# ...the project/blog post/update page.
-## │	   └── playground.html		# Testing grounds.
+## │	   └── post.html			# Individual post page template
 ## ├── Pipfile
 ## ├── Pipfile.lock
 ## ├── requirements.txt
-## └── run.py	# Specifically for starting the app.
-##
+## ├── run.py				# Specifically for starting the app.
+## └── test.py  			# Unit tests for blog directories.
 ## **Wow this makes dealing with paths so much easier I love python.
 ###############################################################################
 

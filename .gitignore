@@ -2,3 +2,6 @@ env/
 .*
 __*
 notes/
+var/
+*.md
+flask_sql*

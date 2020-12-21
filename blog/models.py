@@ -2,7 +2,7 @@
 
 # Standard library.
 from datetime import datetime
-from random import randint, choice
+from random import randint
 
 # Third party.
 from flask_login import UserMixin
@@ -66,11 +66,11 @@ class PostForm(FlaskForm):
 # Splash text
 splashes = ['Not a work in progress!', 'Not FDA approved!',
             'Everything is logged!', "He's reading the splash text!",
-            '　The cake is a lie!', 'Is this thing on?!',
-            '　Welcome to my blog!', '　Your text here!', "　　<class 'str'>",
-            f"Here's a random number: {randint(0, 10)}!", 'Hosted on AWS!',
-            'SECRET PAGE: /admin!', 'Open source, closed enviornment!',
-            '　Cloud computing!', '　PEP8 compliant!', 'Do not redistribute!',
-            '　　idspispopd!', '<a style="color:yellow;">',
-            'Written with Pycharm!', 'Made with Flask!',
-            'Written with vim!', 'Written with gedit!', '　　　P is NP!']
+            'Is this thing on?!', '　Welcome to my blog!', '　Your text here!',
+            "　　<class 'str'>", f"Here's a random number: {randint(0, 1000)}!",
+            '　　Hosted on AWS!', 'SECRET PAGE: /admin!',
+            'Open source, closed enviornment!', '　Cloud computing!',
+            '　PEP8 compliant!', 'Do not redistribute!', '　　idspispopd!',
+            '<a style="color:yellow;">', '　　I love my mom!',
+            'Written with Pycharm!', 'Made with Flask!', '　　　P is NP!',
+            'The Heaney is Irish!']

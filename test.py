@@ -11,6 +11,7 @@ posts = Post.query.all()
 for post in posts:
     routes.append(f'/posts/{post.id}')
     routes.append(f'/posts/{post.id}/edit')
+    routes.append(f'/posts/{post.id}/delete')
 
 
 class FlaskTest(unittest.TestCase):
@@ -25,6 +26,18 @@ class FlaskTest(unittest.TestCase):
                 print(e)
                 print(f'_-_-STATUS ERROR: {response.status_code} ON {route}_-_-')
                 self.fail()
+
+    def test_post_integrity(self):
+        pass
+        # Check for data in all fields of every post.
+
+    def test_embed_integrity(self):
+        pass
+        # Check integrity of embedded images.
+
+    def test_file_integrity(self):
+        pass
+        # Check integrity of static post.md files pointed to by SQL column.
 
 
 if __name__ == '__main__':
