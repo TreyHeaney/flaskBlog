@@ -61,16 +61,3 @@ class PostForm(FlaskForm):
     body = TextAreaField('Content', validators=[DataRequired()])
     project = BooleanField('Project')
     submit = SubmitField('Post')
-
-
-# Splash text
-splashes = ['Not a work in progress!', 'Not FDA approved!',
-            'Everything is logged!', "He's reading the splash text!",
-            'Is this thing on?!', '　Welcome to my blog!', '　Your text here!',
-            "　　<class 'str'>", f"Here's a random number: {randint(0, 1000)}!",
-            '　　Hosted on AWS!', 'SECRET PAGE: /admin!',
-            'Open source, closed enviornment!', '　Cloud computing!',
-            '　PEP8 compliant!', 'Do not redistribute!', '　　idspispopd!',
-            '<a style="color:yellow;">', '　　I love my mom!',
-            'Written with Pycharm!', 'Made with Flask!', '　　　P is NP!',
-            'The Heaney is Irish!']

@@ -8,13 +8,15 @@ backend logic.
 
 # Standard library.
 from random import randint, choice
+from datetime import datetime
 
 # Third party.
-from flask import render_template, url_for, redirect
+from flask import render_template, url_for, redirect, request
 from flask_login import login_user, logout_user, current_user, login_required
 
 # Local.
-from blog.models import Post, User, Login, PostForm, splashes
+from blog.models import Post, User, Login, PostForm
+from blog.backend import log, splashes
 from blog import app, crypt, db, markdown
 
 
@@ -28,7 +30,6 @@ def refresh_posts():
     blogs = [post for post in posts if not post.project]
 
 
-projects, blogs = [], []
 refresh_posts()
 
 
@@ -38,6 +39,7 @@ def build_site():
     @app.route('/home')
     @app.route('/home/')
     def home():
+        log('home')
         return render_template('home.html', posts=projects,
                                splash=choice(splashes))
 
@@ -45,6 +47,7 @@ def build_site():
     @app.route('/blog')
     @app.route('/blog/')
     def blog():
+        log('blog')
         return render_template('blog_page.html', title='Blog', posts=blogs,
                                splash=choice(splashes))
 
@@ -52,12 +55,14 @@ def build_site():
     @app.route('/about')
     @app.route('/about/')
     def about():
+        log('about')
         return render_template('about.html', title='About',
                                splash=choice(splashes))
 
     # Individual post pages.
     @app.route('/posts/<int:post_id>')
     def post(post_id):
+        log(f'post_{post_id}')
         # Get post by ID entered in URL.
         post = Post.query.get_or_404(post_id)
 
@@ -71,6 +76,7 @@ def build_site():
     # Admin login page.
     @app.route('/admin', methods=['GET', 'POST'])
     def admin():
+        log('admin')
         # This entire login structure can support multiple users with the SQL
         # backend, but I'll probably only have a single 'admin' user.
 
@@ -100,6 +106,7 @@ def build_site():
     @app.route('/posts/<int:post_id>/edit', methods=['GET', 'POST'])
     @login_required
     def edit_post(post_id):
+        log('edit')
         global projects, blogs
         if not current_user.is_authenticated:
             return redirect(url_for('home'))
@@ -131,6 +138,7 @@ def build_site():
     @app.route('/posts/<int:post_id>/delete', methods=['GET', 'POST'])
     @login_required
     def delete_post(post_id):
+        log(f'delete_{post_id}')
         global projects, blogs
 
         if not current_user.is_authenticated:
@@ -150,6 +158,7 @@ def build_site():
     @app.route('/new_post', methods=['GET', 'POST'])
     @login_required
     def new_post():
+        log(f'new')
         global projects, blogs
 
         form = PostForm()
@@ -177,6 +186,7 @@ def build_site():
     @app.route('/logout', methods=['GET', 'POST'])
     @login_required
     def logout():
+        log('logout')
         logout_user()
         return redirect(url_for('home'))
 

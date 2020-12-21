@@ -154,50 +154,53 @@
 		font-family:'minecraftfont';
 		src: url('http://design.d3x.co/demo/mcgeneric/font/minecraft_font.woff');
 	}
+	html, body {
+	  height: 100%;
+	  margin: 0;
 	}
-	#page-container {
-	  position: relative;
-	  min-height: 100vh;
+	.content {
+	  min-height: 95%;
 	}
-
-
-	#footer {
-	  position: absolute;
-	  bottom: 0;
-	  width: 100%;
-	  height: 2.5rem;
+	.content-inside {
+	  padding: 20px;
+	  padding-bottom: 50px;
+	}
+	.footer {
+	  height: 50px;
+	  margin-top: -50px;
 	}
 </style>
 
-<main>
-	<div>
-		<center>
-			<p style="font-family:courier;color:#12152e;font-size:50px">
-				Trey's Projects
-			</p>
-			<ul style="position:relative;top:-20px">
-				<li><a href="{{ url_for('home') }}" class="head">Home</a></li>
-				<li><a href="{{ url_for('blog') }}" class="head">Blog</a></li>
-				<li><a href="{{ url_for('about') }}" class="head">About</a></li>
-				<li><a href="{{ url_for('home') }}" class="head">Directory</a></li>
-				<!-- Copy and pasted from http://jsfiddle.net/LhXwj/2/ --->
-				<div class="tilt" style="font-size:16px;position:relative;left:60%">
-					<div id="status" class="pop">
-						{{ splash }}
-					</div>
-				</div>
-				</ul>
-			</center>
+<body>
+	<div class="content">
+		<div class="content-inside">
+			<div>
+				<center>
+					<p style="font-family:courier;color:#12152e;font-size:50px">
+						Trey's Projects
+					</p>
+					<ul style="position:relative;top:-20px">
+						<li><a href="{{ url_for('home') }}" class="head">Home</a></li>
+						<li><a href="{{ url_for('blog') }}" class="head">Blog</a></li>
+						<li><a href="{{ url_for('about') }}" class="head">About</a></li>
+						<li><a href="{{ url_for('home') }}" class="head">Directory</a></li>
+						<!-- Copy and pasted from http://jsfiddle.net/LhXwj/2/ --->
+						<div class="tilt" style="font-size:16px;position:relative;left:60%">
+							<div id="status" class="pop">
+								{{ splash }}
+							</div>
+						</div>
+						</ul>
+					</center>
 
-	</div>
-	<div>
-		<div class="container", style="font-family:courier;color:#12152e;width:800px">
-			{% block content %}
-			{% endblock %}
+			</div>
+			<div>
+				<div class="container", style="font-family:courier;color:#12152e;width:800px">
+					{% block content %}
+					{% endblock %}
+				</div>
+			</div>
 		</div>
-		<!-- Bootstrap -->
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-		<!-- /Bootstrap -->
 	</div>
 	<footer id="footer">
 		<center>
@@ -207,11 +210,11 @@
 				<li><a href="mailto:heaneytrey@gmail.com" style="background-color:white;color:blue">Email</a></li>
 			</ul>
 		</center>
-		<center>
-			<p style="font-family:courier;color:#12152e">
-				I log what you do here.
-			</p>
-		</center>
+	<center>
+		<p style="font-family:courier;color:#12152e">
+			I log what you do here.
+		</p>
+	</center>
 	</footer>
-</main>
+</body>
 </html>
