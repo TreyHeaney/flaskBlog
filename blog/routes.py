@@ -156,7 +156,7 @@ def build_site():
         if form.validate_on_submit():
             # Generate a random hash for our .md filename
             hash_ = ''.join(choice('ABCDEFGHIJK1234567890') for i in range(16))
-            path = f'var/{hash}.md'  # Path to our new .md file.
+            path = f'var/{hash_}.md'  # Path to our new .md file.
             # Create and write to the new .md file.
             content_file = open(path, 'x')
             content_file.write(form.body.data)

@@ -3,7 +3,7 @@
 	<h1 class="header">Blogs</h1>
 	{% for post in posts %}
 		<article class="subheader">
-			<a>></a><a class="inner" href="{{ url_for('post', post_id=post.id) }}" style="">{{ post.title }}</a>
+			<a>#</a><a class="inner" href="{{ url_for('post', post_id=post.id) }}" style="">{{ post.title }}</a>
 			<p style="position:relative;left:51px;bottom:10px;color:gray;font-size:20px">Posted on {{ post.date_posted.date() }}</p>
 		</article>
 	{% endfor %}
