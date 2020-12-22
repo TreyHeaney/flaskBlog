@@ -36,10 +36,6 @@ refresh_posts()
 def build_site():
     @app.before_request
     def logger():
-        POST = request.path
-        print(dir(request))
-        print(request.origin)
-        print(request.referrer)
         log(request)
 
     # Home/projects only page.
