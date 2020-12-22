@@ -1,8 +1,8 @@
 .*
 __*
 notes/
-env/*
-log/*
-var/*
+env/
+log/
+var/
 *.md
 flask_sql*
