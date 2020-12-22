@@ -11,7 +11,7 @@ from flask import request
 def log(page):
     # This logs the current user upon page load.
     # Open current day logs
-    log = open(f"{datetime.now().strftime('%Y-%m-%d')}-log.txt", 'a+')
+    log = open(f"log/{datetime.now().strftime('%Y-%m-%d')}-log.txt", 'a+')
     # Pull user's IP.
     ip = request.environ['REMOTE_ADDR']
     # Push IP to an API and load response.
@@ -21,12 +21,13 @@ def log(page):
     time = datetime.now().strftime('%H-%M-%S')
     # Write to log according to response.
     if user['status'] == 'success':
-        log.write(f"{time},{page},{ip},{user['country']},{user['regionName']},"
-                  f"{user['city']},{user['lat'], user['lon']},{user['isp']},"
-                  f"{user['org']}\n")
+        log.write(f"{time},{page.path},{ip},{user['country']},"
+                  f"{user['regionName']},{user['city']},{user['lat']},"
+                  f"{user['lon']},{user['isp']},{user['org']},"
+                  f"REFERER:{page.referrer}\n")
 
     else:
-        log.write(f'FAILURE,{page},{ip}\n')
+        log.write(f'API FAILURE: {page.path},{ip},REFERRER:{page.referrer}\n')
 
 
 # Splash text

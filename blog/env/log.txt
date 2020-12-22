@@ -1,0 +1,8 @@
+line
+line
+line
+line
+line
+<built-in method now of type object at 0x92ab80>
+2020-12-21 14:42:00.782851
+2020-12-21 14:42:00.945032

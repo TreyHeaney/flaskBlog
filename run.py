@@ -8,7 +8,7 @@
 ## APP TREE
 ##
 ## flaskblog
-## ├── blog			# Package wrapper for project. **
+## ├── blog			# Package wrapper for project.
 ## │   ├── __init__.py		# Initializes environment and backend.
 ## │   ├── models.py		# Holds our input forms and SQL models.
 ## │   ├── routes.py		# Builds the site and and ties together html.
@@ -20,20 +20,19 @@
 ## │       ├── login.html			# Admin login portal for...
 ## │       ├── newpost.html			# ...the project/blog post/update page.
 ## │	   └── post.html			# Individual post page template
+## ├── log **  # Holds log files.
+## ├── var **  # Holds .md files pointed to by SQL database.
 ## ├── Pipfile
 ## ├── Pipfile.lock
 ## ├── requirements.txt
 ## ├── run.py				# Specifically for starting the app.
 ## └── test.py  			# Unit tests for blog directories.
-## **Wow this makes dealing with paths so much easier I love python.
+## ** Environment file not pushed
 ###############################################################################
 
 # TODO:
-# > Post writer.
-# > Post manager.
-# > Post hyperlinks from root pages.
-# > External image hosting for project banners.
-# > AWS
+# > IP ban system.
+# > README.md tutorial on local installation.
 
 from blog import app
 
