@@ -3,8 +3,8 @@
     <br></br>
     <article>
         <h1 class="header", style="white-space: nowrap; "># {{ post.title }}</h1>
-        <p class="content" style="position:relative;left:54px;bottom:18px;">Posted on {{ post.date_posted.date() }}</p>
-        <div style="font-size:130%;a.head:link:blue">
+        <p class="content">Posted on {{ post.date_posted.date() }}</p>
+        <div class="content" style="a.head:link:blue">
             {% filter markdown %}
             {{ content[8:] }}
             {% endfilter %}

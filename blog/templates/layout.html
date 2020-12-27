@@ -15,160 +15,178 @@
 </head>
 
 <style>
-	ul {	
-		list-style-type: none;
-		display: table;
-		margin: -10px;
-		padding: 0;
-		font-size: 25px;
-		font-family: courier;
+	@media screen and (max-width: 600px) {
+		ul {
+			list-style-type: none;
+			display: table;
+			margin: -10px;
+			padding: 0;
+			font-size: 26px;
+			font-family: courier;}
+		li a {
+			display: block;
+			padding: 15px;
+			background-color: #001bff;}
+		.banner {
+			font-family:courier;
+			color:#12152e;
+			font-size:40px;}
+		.header {
+  			font-size: 260%;}
+		.subheader {
+			font-size: 30px;}
+		.content {
+  			font-size: 14px;
+  			position: relative;
+  			top: -20px;}
+		.content-block {
+  			font-family:courier;
+  			color:#12152e;
+  			width:90vw;
+  			position:relative;
+  			left:-30px;}
+		.splash {
+			display:none;}
+		.tilt {
+			-ms-transform: rotate(0deg);
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);}
+	}
+	@media screen and (min-width: 601px) {
+		ul {
+			list-style-type: none;
+			display: table;
+			margin: -10px;
+			padding: 0;
+			font-size: 28px;
+			font-family: courier;}
+		li a {
+			display: block;
+			padding: 12px;
+			background-color: #001bff;}
+		.banner {
+			font-family:courier;
+			color:#12152e;
+			font-size:50px;}
+		.header {
+  			font-size: 220%;}
+		.subheader {
+			font-size: 35px;}
+		.content {
+  			font-size: 19px;
+  			position: relative;
+  			top: -20px;}
+  		.content-block {
+  			font-family:courier;
+  			color:#12152e;
+  			width:800px;}
+  		.splash {
+  			font-size:17px;
+  			position:relative;
+  			left:55%;
+  			top:20px}
+		.tilt {
+			-ms-transform: rotate(-25deg);
+			-webkit-transform: rotate(-25deg);
+			transform: rotate(-25deg);}
 	}
 	li {
-		float: left;
-	}
-	li a {
-		display: block;
-		padding: 15px;
-		background-color: #001bff;
-	}
+		float: left;}
 	a {
   		color: white;
-  		padding: 10px;
+  		padding: 10px;}
+  	a:link {
+		color: blue;
+		text-decoration: none;
+		font-weight: normal}
+	a:visited {
+		color: blue;
+		text-decoration: none;
+		font-weight: normal}
+	a:active {
+		color: blue;
+		text-decoration: none}
+	a:hover {
+		color: blue;
+		text-decoration: none;
+		font-weight: none}
+	a.head:link {
+		color: white;
+		text-decoration: none;
+		font-weight: normal}
+	a.head:visited {
+		color: white;
+		text-decoration: none;
+		font-weight: normal}
+	a.head:active {
+		color: white;
+		text-decoration: none}
+	a.head:hover {
+		color: grey;
+		text-decoration: none;
+		font-weight: none}
+	a.inner:link {
+		color: black;
+		text-decoration: none;
+		font-weight: normal}
+	a.inner:visited {
+		color: black;
+		text-decoration: none;
+		font-weight: normal;}
+	a.inner:active {
+		color: blue;
+		text-decoration: none;}
+	a.inner:hover {
+		color: blue;
+		text-decoration: none;
+		font-weight: none;}
+    #status {
+		color: #FFFF00;
+		font-size: 1.4em;
+		font-family:'minecraftfont';
+		text-shadow:3px 3px #3F3F00;
+		padding: 0px;
+		position: absolute;}
+	.pop {
+		animation: pop 0.7s infinite;
+		-webkit-animation: pop 0.58s infinite;}
+	@keyframes pop {
+		from {
+			transform:scale(0.95)}
+		50% {
+			transform:scale(1)}
+		to {
+			transform:scale(0.95)}
 	}
+	@-webkit-keyframes pop {
+		from {
+			-webkit-transform:scale(0.95)}
+		50% {
+			-webkit-transform:scale(1)}
+		to {
+			-webkit-transform:scale(0.95)
+    }
+	}
+	@font-face {
+		font-family:'minecraftfont';
+		src: url('http://design.d3x.co/demo/mcgeneric/font/minecraft_font.woff');}
+	html, body {
+		height: 100%;
+		margin: 0;}
+	.content {
+		min-height: 95%;}
+	.content-inside {
+		padding: 20px;
+		padding-bottom: 50px;}
 	.footer {
-  		position: fixed;
+		position: fixed;
+		height: 50px;
+		margin-top: -50px;
   		left: 0;
   		bottom: 0;
   		width: 100%;
   		color: white;
-  		text-align: center;
-  	}
-  	.header {
-  		font-size: 45px;
-  	}
-  	.subheader {
-		font-size: 35px;
-  	}
-  	.content {
-  		font-size: 19px;
-  		position: relative;
-  		top: -20px;
-  	}
-  	a:link {
-		color: blue;
-		text-decoration: none;
-		font-weight: normal
-	}
-	a:visited {
-		color: blue;
-		text-decoration: none;
-		font-weight: normal
-	}
-	a:active {
-		color: blue;
-		text-decoration: none
-	}
-	a:hover {
-		color: blue;
-		text-decoration: none;
-		font-weight: none
-	}
-	a.head:link {
-		color: white;
-		text-decoration: none;
-		font-weight: normal
-	}
-	a.head:visited {
-		color: white;
-		text-decoration: none;
-		font-weight: normal
-	}
-	a.head:active {
-		color: white;
-		text-decoration: none
-	}
-	a.head:hover {
-		color: grey;
-		text-decoration: none;
-		font-weight: none
-	}
-	a.inner:link {
-		color: black;
-		text-decoration: none;
-		font-weight: normal
-	}
-	a.inner:visited {
-		color: black;
-		text-decoration: none;
-		font-weight: normal
-	}
-	a.inner:active {
-		color: blue;
-		text-decoration: none
-	}
-	a.inner:hover {
-		color: blue;
-		text-decoration: none;
-		font-weight: none
-	}
-    #status {
-		color: #FFFF00;
-		font-size: 1.5em;
-		font-family:'minecraftfont';
-		text-shadow:3px 3px #3F3F00;
-		padding: 0px;
-		position: absolute;
-	}
-	.pop {
-		animation: pop 0.7s infinite;
-		-webkit-animation: pop 0.58s infinite;
-	}
-	@keyframes pop {
-    from {
-        transform:scale(0.95)
-    }
-    50% {
-        transform:scale(1)
-    }
-    to {
-        transform:scale(0.95)
-    }
-	}
-	@-webkit-keyframes pop {
-    from {
-        -webkit-transform:scale(0.95)
-    }
-    50% {
-        -webkit-transform:scale(1)
-    }
-    to {
-        -webkit-transform:scale(0.95)
-    }
-	}
-	.tilt {
-		-ms-transform: rotate(-25deg);
-		-webkit-transform: rotate(-25deg);
-		transform: rotate(-25deg);
-	}
-	@font-face {
-		font-family:'minecraftfont';
-		src: url('http://design.d3x.co/demo/mcgeneric/font/minecraft_font.woff');
-	}
-	html, body {
-	  height: 100%;
-	  margin: 0;
-	}
-	.content {
-	  min-height: 95%;
-	}
-	.content-inside {
-	  padding: 20px;
-	  padding-bottom: 50px;
-	}
-	.footer {
-	  height: 50px;
-	  margin-top: -50px;
-	}
+  		text-align: center;}
 </style>
 
 <body>
@@ -176,18 +194,23 @@
 		<div class="content-inside">
 			<div>
 				<center>
-					<p style="font-family:courier;color:#12152e;font-size:50px">
+					<p class="banner">
 						Trey's Projects
 					</p>
 					<ul style="position:relative;top:-20px">
 						<li><a href="{{ url_for('home') }}" class="head">Home</a></li>
 						<li><a href="{{ url_for('blog') }}" class="head">Blog</a></li>
 						<li><a href="{{ url_for('about') }}" class="head">About</a></li>
-						<li><a href="{{ url_for('home') }}" class="head">Directory</a></li>
 						<!-- Copy and pasted from http://jsfiddle.net/LhXwj/2/ --->
-						<div class="tilt" style="font-size:16px;position:relative;left:60%">
+						<div class="tilt splash">
 							<div id="status" class="pop">
+								{% if splash == "I don't feel so good!" %}
+								<c>I don't f</c><c style="opacity:0.85">e</c><c style="opacity:0.85">e</c><c style="opacity:0.75">l </c><c style="opacity:0.65">s</c><c style="opacity:0.55">o</c><c style="opacity:0.35"> g</c><c style="opacity:0.25">o</c><c style="opacity:0.15">o</c><c style="opacity:0.05">d!</c>
+								{% elif splash == "Rainbow!" %}
+								<font color=#ff0000>　　R</font><font color=#df5d1f>a</font><font color=#bfad3f>i</font><font color=#9fe65f>n</font><font color=#7ffe7f>b</font><font color=#5ff39f>o</font><font color=#3fc6bf>w</font><font color=#1f7ddf>!</font>
+								{% else %}
 								{{ splash }}
+								{% endif %}
 							</div>
 						</div>
 						</ul>
@@ -195,7 +218,7 @@
 
 			</div>
 			<div>
-				<div class="container", style="font-family:courier;color:#12152e;width:800px">
+				<div class="container content-block">
 					{% block content %}
 					{% endblock %}
 				</div>
